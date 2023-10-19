@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/startFragment">
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="ganhar.emsfv.schoolbacketball.presentation.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_startFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="ganhar.emsfv.schoolbacketball.presentation.fragments.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu">
+
+        <action
+            android:id="@+id/action_menuFragment_to_moreDetailsFragment"
+            app:destination="@id/moreDetailsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moreDetailsFragment"
+        android:name="ganhar.emsfv.schoolbacketball.presentation.fragments.MoreDetailsFragment"
+        android:label="fragment_more_details"
+        tools:layout="@layout/fragment_more_details">
+
+        <argument
+            android:name="SomeText"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="ganhar.emsfv.schoolbacketball.presentation.fragments.notes.NotesFragment"
+        android:label="fragment_notes"
+        tools:layout="@layout/fragment_notes">
+        <action
+            android:id="@+id/action_notesFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="ganhar.emsfv.schoolbacketball.presentation.fragments.notes.NoteDetailFragment"
+        android:label="fragment_note_detail"
+        tools:layout="@layout/fragment_note_detail">
+        <argument
+            android:name="NoteModel"
+            app:argType="ganhar.emsfv.schoolbacketball.model.NoteModel" />
+    </fragment>
+</navigation>
